@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dynamic</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    {{!-- font awesome link --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    {{!-- adding css --}}
+    <link rel="stylesheet" href="/static/css/style.css">    
+</head>
+
+<body>
+
+    {{!-- importing partials --}}
+    {{>navbar data= compasData}}
+    {{> slider dataSlide= mySlide}}
+
+
+    {{!-- this is banner 1 section --}}
+
+    <section class="banner1_section py-5 text-center ">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                <h1 class="text-success">Start learning new things here !!!</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta hic dolor amet, similique quaerat expedita ipsam qui fugit libero culpa? Possimus deleniti reiciendis hic laboriosam asperiores ratione inventore neque quam?</p>
+                <button class="btn btn-outline-primary">Start learning</button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    
+    {{!-- {{mySlide}} --}}
+    {{!-- {{compasData}} --}}
+
+    {{!-- services section --}}
+
+    <section id="services_section"  class="py-5">
+
+        <div class="container-fluid">
+            <h1 class="text-center text-success">Services that we provide</h1>
+            <div class="row">
+            
+                {{!-- first service col --}}
+
+                {{#each myService}}
+                {{!-- service-1 --}}
+                
+                
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            {{!-- icon from font awesome --}}
+                            <div class="container text-center">
+                                <i class="{{this.icon}} service_icon"></i>
+                                {{!-- <i class="fab fa-accusoft service_icon"></i> --}}
+                            </div>
+                            <h4 class="card-title">{{this.title}}</h4>
+                            <p>{{this.desc}}</p>
+                
+                            <a href="{{this.actlink}}">{{this.linkText}}</a>
+                            <a href="#!"> Support</a>
+                        </div>
+                    </div>
+                
+                </div> 
+                
+                {{/each}}
+
+                
+            </div>
+
+
+        </container-fluid>
+
+    </section>
+
+    {{!-- this is banner 2 section --}}
+    <section class="banner2_section py-5 text-center ">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1 class="text-success">Register today here !!!</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta hic dolor amet, similique quaerat
+                        expedita ipsam qui fugit libero culpa? Possimus deleniti reiciendis hic laboriosam asperiores
+                        ratione inventore neque quam?</p>
+                    <button class="btn btn-outline-primary">Register</button>    
+                </div>
+
+                <div class="col-md-6">
+                    <img  src="/static/images/w2m.jpg" style="height: 300px;" alt="nothing">
+                
+                </div>
+            </div>
+        </div>
+    
+    </section>
+
+
+
+
+
+    {{!-- contact us form section --}}
+
+    <section id="contact_us_section" class="py-5 background1" >
+        <div class="container">
+            <h3 class="text-center text-success">Contact us</h3>
+            <div class="row">
+                <div class="col-md-12">
+                    {{!-- form from bootsrap --}}
+                    <form action="/process-contact-form" method="post">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label text-white">Your email address</label>
+                            <input name = "email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactNumberfield" class="form-label text-white">Your contact number</label>
+                            <input name="phone" type="number" class="form-control" id="contactNumberfield">
+                        </div>
+                        {{!-- text area --}}
+                        <div class="form-floating my-2" >
+                            <textarea name="query" style="height: 200px;" class="form-control" placeholder="Enter your query here" id="queryField"></textarea>
+                            <label for="queryField">Your query</label>
+                        </div>
+
+
+                        <div class="container text-center">
+                            <button type="submit" class="btn btn-outline-primary">Submit</button>
+                            
+                        </div>
+                    </form>
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    {{!-- about section --}}
+
+    <section id="about_section" class="py-5 text-center ">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-success">About this site</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta hic dolor amet, similique quaerat
+                        expedita ipsam qui fugit libero culpa? Possimus deleniti reiciendis hic laboriosam asperiores
+                        ratione inventore neque quam?</p>
+                    <button class="btn btn-outline-primary">Contact us</button>
+                </div>
+            </div>
+        </div>
+    
+    </section>
+
+    {{!-- footer section --}}
+    <footer  class="footer background1 text-center py-5 ">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-white">
+                    @2023 Copyright: <span>Contact@Sunny</span>
+                </div>
+            </div>
+        </div>
+    
+    </footer >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+        
+</body>
+
+</html>
