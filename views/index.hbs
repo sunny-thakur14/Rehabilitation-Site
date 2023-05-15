@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dynamic</title>
+    <title>Rehab</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     {{!-- font awesome link --}}
@@ -17,14 +17,21 @@
 
 <body>
 
+    <div class="phone">
+        <button class="contact-btn"><span><i class="fas fa-phone-alt"></i></span> 985588****</button>
+    </div>
     {{!-- importing partials --}}
     {{>navbar data= compasData}}
-    {{> slider dataSlide= mySlide}}
+    {{!-- {{>slider dataSlide= mySlide}} --}}
+
+    {{!-- 2nd slider2 --}}
+    {{>slider2 dataSlide= mySlide}}
+    
 
 
     {{!-- this is banner 1 section --}}
 
-    <section class="banner1_section py-5 text-center ">
+    {{!-- <section class="banner1_section py-5 text-center ">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -34,8 +41,7 @@
                 </div>
             </div>
         </div>
-
-    </section>
+    </section> --}}
     
     {{!-- {{mySlide}} --}}
     {{!-- {{compasData}} --}}
@@ -54,9 +60,9 @@
                 {{!-- service-1 --}}
                 
                 
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
+                <div class="col-md-3" style="padding-top : 20px">
+                    <div class="card" >
+                        <div class="card-body service_cards" >
                             {{!-- icon from font awesome --}}
                             <div class="container text-center">
                                 <i class="{{this.icon}} service_icon"></i>
@@ -81,6 +87,7 @@
         </container-fluid>
 
     </section>
+    
 
     {{!-- this is banner 2 section --}}
     <section class="banner2_section py-5 text-center ">
@@ -176,19 +183,6 @@
     </footer >
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
